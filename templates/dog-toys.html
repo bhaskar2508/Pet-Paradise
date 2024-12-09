@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%load static%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Food</title>
+    <link
+      rel="shortcut icon"
+      href="{%static 'images/logo.png'%}" type="image/x-icon"/>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{%static 'css/dog-toys.css'%}">
+<body>
+    
+<header>
+    <div class="menu">
+        <div class="menu-item">
+            <button>Cats</button>
+            <div class="dropdown-content">
+                <a href="cat-food">Food</a>
+                <a href="cat-toys">Toys</a>
+                <a href="cat-health">Health</a>
+            </div>
+        </div>
+        <div class="menu-item">
+            <button>Dogs</button>
+            <div class="dropdown-content">
+                <a href="dog-food">Food</a>
+                <a href="dog-toys">Toys</a>
+                <a href="dog-health">Health</a>
+            </div>
+        </div>
+        <div class="menu-item">
+            <button>Vet</button>
+            <div class="dropdown-content">
+                <a href="#vet-appointments">Appointments</a>
+                <a href="#vet-tips">Tips</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="right-menu">
+        <a href="/">Home</a>
+        <div class="cart-icon">
+            <i class="ri-shopping-cart-line"></i>
+            <a href="cart"><span id="cart-count">0</span></a>
+        </div>
+        <div class="user-icon">
+            <i class="fas fa-user"></i>
+            <a href="#user-profile">{{user}}</a>
+        </div>
+    </div>
+</header>   
+
+<div class="album">
+    <div class="container">
+        <div class="row">
+            {% for i in dt %}
+            <div class="col">
+                <div class="card">
+                    {% if i.image %}
+                    <img src="{{ i.image.url }}" alt="{{ i.product_name }}" style="width:100%; height: auto;">
+                    {% else %}
+                    <div class="card-body">
+                        <p class="card-text">No image available</p>
+                    </div>
+                    {% endif %}
+                    <div class="card-body">
+                        <p class="card-title">{{ i.product_name }}</p>
+                        <p class="card-price">Rs. {{ i.product_price }}</p>
+                        <p class="card-description">{{ i.description }}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="add_to_cart_04/{{ i.id }}" class="btn btn-sm btn-outline-secondary">Add to Cart</a>
+                            </div>
+                            <small class="text-body-secondary">Updated recently</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}    
+        </div>
+    </div>
+</div>
+</body>
+<html>

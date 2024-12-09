@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/x-icon" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'css/cart-view.css' %}" />
+    <script src="{% static 'js/cart-view.js' %}"></script>
+</head>
+<body>
+    <div class="cart-container">
+        <h1 class="heading">Your Selections</h1>
+        <h1 class="home"><a href="/">Home</a></h1>
+        <h1 class="home"><a href="store">Visit Store</a></h1>
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                    <th>Sub-Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in cf %}
+                <tr>
+                    <td>
+                        <img src="{{ i.catfood.image.url }}" alt="{{ i.catfood.product_name }}" class="product-image">
+                    </td>
+                    <td>{{ i.catfood.product_name }}</td>
+                    <td>₹ {{ i.catfood.product_price }}</td>
+                    <td>{{ i.catfood.description }}</td>
+                    <td><input type="number" name="quantity" value="1" min="1" onchange="updateSubtotal(this)"></td>
+                    <td><input type="text" class="subtotal" value="{{ i.catfood.product_price }}" readonly></td>
+                    <td>
+                        <a href="delete1?id={{ i.id }}" class="delete-btn">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                
+                {% for i in ch %}
+                <tr>
+                    <td>
+                        <img src="{{ i.cathealth.image.url }}" alt="{{ i.cathealth.product_name }}" class="product-image">
+                    </td>
+                    <td>{{ i.cathealth.product_name }}</td>
+                    <td>₹ {{ i.cathealth.product_price }}</td>
+                    <td>{{ i.cathealth.description }}</td>
+                    <td><input type="number" name="quantity" value="1" min="1" onchange="updateSubtotal(this)"></td>
+                    <td><input type="text" class="subtotal" value="{{ i.cathealth.product_price }}" readonly></td>
+                    <td>
+                        <a href="delete2?id={{ i.id }}" class="delete-btn">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                
+                {% for i in ct %}
+                <tr>
+                    <td>
+                        <img src="{{ i.cattoys.image.url }}" alt="{{ i.cattoys.product_name }}" class="product-image">
+                    </td>
+                    <td>{{ i.cattoys.product_name }}</td>
+                    <td>₹ {{ i.cattoys.product_price }}</td>
+                    <td>{{ i.cattoys.description }}</td>
+                    <td><input type="number" name="quantity" value="1" min="1" onchange="updateSubtotal(this)"></td>
+                    <td><input type="text" class="subtotal" value="{{ i.cattoys.product_price }}" readonly></td>
+                    <td>
+                        <a href="delete3?id={{ i.id }}" class="delete-btn">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                {% for i in df %}
+                <tr>
+                    <td>
+                        <img src="{{ i.dogfood.image.url }}" alt="{{ i.dogfood.product_name }}" class="product-image">
+                    </td>
+                    <td>{{ i.dogfood.product_name }}</td>
+                    <td>₹ {{ i.dogfood.product_price }}</td>
+                    <td>{{ i.dogfood.description }}</td>
+                    <td><input type="number" name="quantity" value="1" min="1" onchange="updateSubtotal(this)"></td>
+                    <td><input type="text" class="subtotal" value="{{ i.dogfood.product_price }}" readonly></td>
+                    <td>
+                        <a href="delete4?id={{ i.id }}" class="delete-btn">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                
+                {% for i in dt %}
+                <tr>
+                    <td>
+                        <img src="{{ i.dogtoys.image.url }}" alt="{{ i.dogtoys.product_name }}" class="product-image">
+                    </td>
+                    <td>{{ i.dogtoys.product_name }}</td>
+                    <td>₹ {{ i.dogtoys.product_price }}</td>
+                    <td>{{ i.dogtoys.description }}</td>
+                    <td><input type="number" name="quantity" value="1" min="1" onchange="updateSubtotal(this)"></td>
+                    <td><input type="text" class="subtotal" value="{{ i.dogtoys.product_price }}" readonly></td>
+                    <td>
+                        <a href="delete5?id={{ i.id }}" class="delete-btn">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                
+                {% for i in dh %}
+                <tr>
+                    <td>
+                        <img src="{{ i.doghealth.image.url }}" alt="{{ i.doghealth.product_name }}" class="product-image">
+                    </td>
+                    <td>{{ i.doghealth.product_name }}</td>
+                    <td>₹ {{ i.doghealth.product_price }}</td>
+                    <td>{{ i.doghealth.description }}</td>
+                    <td><input type="number" name="quantity" value="1" min="1" onchange="updateSubtotal(this)"></td>
+                    <td><input type="text" class="subtotal" value="{{ i.doghealth.product_price }}" readonly></td>
+                    <td>
+                        <a href="delete6?id={{ i.id }}" class="delete-btn">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="summary-container">
+        <h1 id="total">Final Total: Rs. <span id="total-value">0.00 /-</span></h1>
+        <h1 id="gst">GST (18%): Rs. <span id="gst-value">0.00 /-</span></h1>
+        <h1 id="invoice-total">Invoice Total: Rs. <span id="invoice-total-value">0.00 /-</span></h1>
+    </div>
+</div>
+
+
+<form id="payment-form" action="#" method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="amount" value="{{ invoice_total }}"><h2>Payment Information </h2>
+    <div class="payment-method">
+    </div>
+    <button class="button"><a href="pay_now">Place Order</a></button>
+    <!-- <button><a href="/">Pay Later</a></button> -->
+</form>
+
+</body>
+</html>

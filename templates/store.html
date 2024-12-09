@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%load static%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections</title>
+    <link
+      rel="shortcut icon"
+      href="{%static 'images/logo.png'%}" type="image/x-icon"/>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{%static 'css/collection.css'%}">
+    <script src="{%static 'js/collection.js'%}"></script>
+    
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"
+integrity="sha512-qF6akR/fsZAB4Co1QDDnUXWnaQseLGXoniuSuSlPQK6+aWhlMZcHzkasCSlnWoe+TJuudlka1/IQ01Dnhgq95g=="
+crossorigin="anonymous"
+referrerpolicy="no-referrer"
+></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+<header>
+    <div class="menu">
+        <div class="menu-item">
+            <button>Cats</button>
+            <div class="dropdown-content">
+                <a href="cat-food">Food</a>
+                <a href="cat-toys">Toys</a>
+                <a href="cat-health">Health</a>
+            </div>
+        </div>
+        <div class="menu-item">
+            <button>Dogs</button>
+            <div class="dropdown-content">
+                <a href="dog-food">Food</a>
+                <a href="dog-toys">Toys</a>
+                <a href="dog-health">Health</a>
+            </div>
+        </div>
+        <div class="menu-item">
+            <button>Vet</button>
+            <div class="dropdown-content">
+                <a href="#vet-appointments">Appointments</a>
+                <a href="#vet-tips">Tips</a>
+            </div>
+        </div>
+    </div>
+    <div class="right-menu">
+        <a href="/">Home</a>
+        <div class="cart-icon">
+            <i class="ri-shopping-cart-line"></i>
+            <a href="cart"><span id="cart-count">0</span></a>
+        </div>
+        <div class="user-icon">
+            <i class="fas fa-user"></i>
+            <a href="#user-profile">{{user}}</a>
+        </div>
+    </div>
+</header>   
+
+<div class="collection-container">
+    <div class="collection">
+        <img src="https://img.freepik.com/free-photo/group-portrait-adorable-puppies_53876-64796.jpg?t=st=1733063077~exp=1733066677~hmac=4df1452b395e4e6885128030b7910f9b4a8489ffefc936bea416f0575e47370b&w=1380" alt="Dogs Collection">
+        <h2>Dogs Collection</h2>
+        <p>Explore our wide selection of dog products, including food, toys, accessories, and grooming essentials.</p>
+        <a href="dog-health">Shop Dogs</a>
+    </div>
+    <div class="collection">
+        <img src="https://i.pinimg.com/736x/ca/8f/f3/ca8ff3eda86eb48f6c1e76a3a8a1f5d6.jpg" alt="Cats Collection">
+        <h2>Cats Collection</h2>
+        <p>Discover our premium cat food, toys, grooming tools, and comfy cat beds to keep your feline friends happy.</p>
+        <a href="cat-food">Shop Cats</a>
+    </div>
+    <div class="collection">
+        <img src="https://i.pinimg.com/736x/a9/13/e7/a913e7a51b581e06fd0ff664d953db76.jpg" alt="Pet Toys Collection">
+        <h2>Pet Toys Collection</h2>
+        <p>Find the best toys for your pets. From interactive toys to chew toys, we have something for every pet.</p>
+        <a href="cat-toys">Shop Toys</a>
+    </div>
+    <div class="collection">
+        <img src="https://i.pinimg.com/736x/6b/e6/12/6be61278fa40b15f1338b5dc298362df.jpg" alt="Pet Food Collection">
+        <h2>Pet Food Collection</h2>
+        <p>Shop the finest selection of pet food for your furry friends. We offer nutritious meals for dogs, cats, puppies, and kittens.</p>
+        <a href="dog-toys">Shop Food</a>
+    </div>
+    <div class="collection">
+        <img src="https://www.shutterstock.com/shutterstock/photos/2458440871/display_1500/stock-photo-biggest-offer-text-written-in-gold-rummy-world-suites-shapes-and-cards-are-flying-gold-coin-2458440871.jpg" alt="Sale Collection">
+        <h2>Special Offers</h2>
+        <p>Check out our sale section for discounted pet products. Don't miss the chance to grab your pet's favorite items at great prices!</p>
+        <a href="#">Shop Sale</a>
+    </div>
+</div>
+
+<footer>
+  <div class="footer-container">
+      <div class="footer-column">
+          <h4>ONLINE SHOPPING</h4>
+          <ul>
+              <li><a href="#">Dogs</a></li>
+              <li><a href="#">Cats</a></li>
+              <li><a href="#">Small Pets</a></li>
+              <li><a href="#">Consult a Vet</a></li>
+              <li><a href="#">Dog Behaviour</a></li>
+              <li><a href="#">Pet Pharmacy</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h4>EXPLORE</h4>
+          <ul>
+              <li><a href="#">Our story</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact Us</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h4>QUICK LINKS</h4>
+          <ul>
+              <li><a href="#">My Account</a></li>
+              <li><a href="#">Track Your Order</a></li>
+              <li><a href="#">Refund policy</a></li>
+              <li><a href="#">Return policy</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Refer and save</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h4>EXPERIENCE PARADISE APP ON MOBILE</h4>
+          <div class="app-store-buttons">
+              <a href="#"><img src="//supertails.com/cdn/shop/files/Frame_3421_12f12999-3318-4c4a-9068-45cff809345f.png?v=1695720851" alt="Get it on Google Play"></a>
+              <a href="#"><img src="//supertails.com/cdn/shop/files/Frame_3422_e205fb91-99db-4b85-9e13-c81a036d1520.png?v=1695720885" alt="Download on the App Store"></a>
+          </div>
+          <h4>FOLLOW US</h4>
+          
+          <div class="social-media">
+            <a href="https://www.instagram.com/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/128/2111/2111463.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.linkedin.com/in/bhaskar-mourya/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/128/3536/3536505.png" alt="LinkedIn" class="social-icon">
+            </a>
+            <a href="https://web.whatsapp.com/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/128/733/733585.png" alt="WhatsApp" class="social-icon">
+            </a>
+            
+            <a href="https://github.com/bhaskar2508" target="_blank">
+              <img src="https://cdn-icons-png.flaticon.com/128/270/270798.png" alt="Github" class="social-icon">
+          </a>
+        </div>
+          <h4>GET IN TOUCH</h4>
+          <p>1800-5723-575</p>
+          <p>support@petparadise.com</p>
+      </div>
+  </div>
+</footer>
+
+
+<div id="address">
+    <H1><b>Pet Paradise Office</b></H1>
+    <h2>Saryodaya Nagar, Mulund West , Mumbai -80 , Maharashtra.</h2>
+  </div>
+  
+  <div class="conclusion">
+    <p>&copy; <span id="year"></span> Pet Paradise. All rights reserved.</p>
+  </div>
+
+</body>
+</html>

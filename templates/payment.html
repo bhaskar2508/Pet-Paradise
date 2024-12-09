@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay Now</title>
+    <link
+    rel="shortcut icon"
+    href="{%static 'images/logo.png'%}" type="image/x-icon"/>
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
+    <link rel="stylesheet" href="{% static 'css/pay.css' %}">
+</head>
+<body>
+    <div class="payment-container">
+        <div class="banner">
+            <img src="https://i.pinimg.com/736x/e6/cd/a9/e6cda973b55b1d8e7e060d17f18d03a7.jpg" alt="Payment Banner">
+        </div>
+
+        <h2>Select Your Payment Method</h2>
+        <form id="payment-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="abef3d9f-b46a-4870-8aa5-b7da5f057cc7">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea id="address" placeholder="Enter your address" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact Number</label>
+                <input type="tel" id="contact" placeholder="Enter your phone number"  required>
+            </div>
+            <button type="button" class="btn cod" onclick="placeOrder('cod')">Cash on Delivery</button>
+            <button type="button" class="btn online" onclick="placeOrder('online')">Pay Online</button>
+        </form>
+
+        <p id="message" class="message"></p>
+        <a href="/" id="home-link" class="home-link" style="display: none;">Return to Home</a>
+    </div>
+
+    <script>
+        function placeOrder(option) {
+            const message = document.getElementById('message');
+            const homeLink = document.getElementById('home-link');
+            
+            if (option === 'cod') {
+                message.textContent = "Order placed successfully! Redirecting to home...";
+                message.className = "message success";
+                message.style.display = "block";
+                setTimeout(() => {
+                    window.location.href = "/";
+                }, 2000); 
+            } else if (option === 'online') {
+                message.textContent = "Sorry, this mode is currently unavailable. Please use COD.";
+                message.className = "message error";
+                message.style.display = "block";
+                homeLink.style.display = "inline-block";
+            }
+        }
+    </script>
+</body>
+</html>

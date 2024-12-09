@@ -1,0 +1,235 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+}
+
+header {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 20px;
+}
+
+.menu {
+    display: flex;
+    gap: 200px;
+    font-family: Georgia, 'Times New Roman', Times, serif;  
+}
+
+.menu-item {
+    position: relative;
+}
+
+.menu-item button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+.menu-item button:hover {
+    text-decoration: underline;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: #333;
+    min-width: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.menu-item:hover .dropdown-content {
+    display: block;
+}
+
+.right-menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.right-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.right-menu a:hover {
+    text-decoration: underline;
+}
+
+.user-icon {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.user-icon i {
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .right-menu {
+        align-self: flex-end;
+    }
+}
+
+
+.album {
+    padding: 4rem 0;
+    background-color: #ffffff;
+    flex-grow: 1; 
+    padding: 1rem;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+h1{
+    font-size: 2.5rem;
+    color: #020001;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.col {
+    flex: 1 0 100%;
+    max-width: calc(33.3333% - 1.5rem);
+    box-sizing: border-box;
+}
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+.card-body {
+    padding: 1rem;
+}
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: hwb(0 1% 99%);
+}
+.card-price {
+    font-size: 1.1rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+.card-description {
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+.btn-group {
+    display: flex;
+    gap: 0.5rem;
+}
+.btn {
+    display: inline-block;
+    font-weight: 500;
+    color: #007bff;
+    text-align: center;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #007bff;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.btn:hover {
+    color: #fff;
+    background-color: #007bff;
+}
+.btn-outline-secondary {
+    border-color: #6c757d;
+    color: #6c757d;
+}
+.btn-outline-secondary:hover {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+.text-body-secondary {
+    color: #888;
+}
+
+
+.right-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem; 
+}
+
+.cart-icon {
+    position: relative;
+    font-size: 1.5rem; 
+    color: #333;
+    cursor: pointer;
+}
+
+.cart-icon i {
+    font-size: 1.5rem;
+}
+
+#cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: #ff6b6b;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 0.2rem 0.4rem;
+    border-radius: 50%;
+    min-width: 20px;
+    text-align: center;
+}

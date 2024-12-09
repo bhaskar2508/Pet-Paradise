@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+    {%load static%}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet Paradise</title>
+    <link
+      rel="shortcut icon"
+      href="{%static 'images/logo.png'%}" type="image/x-icon"/>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{%static 'css/style.css'%}" />
+  </head>
+
+  <body>
+    <div id="nav">
+      <img
+        src="{%static 'images/logo.png'%}" alt=""/>
+      {% if user.is_authenticated %}
+      <h4><a href="">Home</a></h4>
+      <h4><a href="">About </a></h4>
+      <h4><a href="">Services</a></h4>
+      <h4><a href="store">Store</a></h4>
+      <h4 class="user-info">
+        <img src="{%static 'images/user.png'%}" alt="User Logo">
+        <span>{{user}}</span>
+      </h4>
+      <h4><a href="logout">Logout</a></h4>
+      {%else%}
+      <h4><a href="">Home</a></h4>
+      <h4><a href="">About </a></h4>
+      <h4><a href="">Services</a></h4>
+      <h4><a href="store">Store</a></h4>
+      <h4><a href="login">Login / Register</a></h4>
+      {%endif%}
+    </div>
+    <div id="cursor"></div>
+    <div id="cursor-blur"></div>
+
+    <video
+      autoplay
+      loop
+      muted
+      src="https://videos.pexels.com/video-files/11534028/11534028-uhd_2560_1440_25fps.mp4" 
+    ></video>
+    <div id="main">
+      <div id="page1">
+        <h1>FIND. YOUR. PET.</h1>
+        <h2>WELCOME TO PET PARADISE !</h2>
+        <p>
+            Pet Paradise is a welcoming pet store that caters to all your pet care needs. Located conveniently, we’re dedicated to providing high-quality products and expert advice, ensuring that pet care is accessible, affordable, and enjoyable. 
+        </p>
+        <div id="arrow">
+          <i class="ri-arrow-down-line"></i>
+        </div>
+      </div>
+      <div id="page2">
+        <div id="scroller">
+          <div id="scroller-in">
+            <h4>QUALITY PET FOOD</h4>
+            <h4>GROOMING SERVICES</h4>
+            <h4>PET ADOPTION</h4>
+            <h4>PET ACCESSORIES</h4>
+            <h4>HEALTH & WELLNESS</h4>
+          </div>
+          <div id="scroller-in">
+            <h4>QUALITY PET FOOD</h4>
+            <h4>GROOMING SERVICES</h4>
+            <h4>PET ADOPTION</h4>
+            <h4>PET ACCESSORIES</h4>
+            <h4>HEALTH & WELLNESS</h4>        
+          </div>
+          <div id="about-us">
+            <h1>What We Do ?</h1>
+              <p>At Pet Paradise, we believe that every pet deserves a happy, healthy life. </p>
+              <p>From grooming and health check-ups to playtime and socialization, our mission is to make sure your pet feels safe, loved, and cared for.</p>
+              <p>Our experienced team offers personalized care tailored to meet the unique needs of each pet, ensuring they always feel at home, even when you're away.</p>
+          </div>
+          <div class="container">
+            <div class="left-section">
+                <img src="{% static 'images/vet1.png' %}" alt="Veterinarian Image">
+                <div class="left-text">
+                    <h1>Get Instant Advice</h1>
+                    <h2>Chat with an Expert Vet</h2>
+                    <button>Consult Now</button>
+                </div>
+            </div>
+            <div class="right-section">
+                <div class="product">
+                    <img src="https://i.pinimg.com/564x/b6/b9/5d/b6b95db31d6d18fc25540eba02074e52.jpg" alt="Pet Medicines">
+                    <div class="product-text">
+                        <h3>Fastest Delivery on Pet Medicines</h3>
+                        <button><a href="store">Shop Now</a></button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="https://img.freepik.com/free-photo/guacamole-concept-with-clipboard_23-2147812117.jpg" alt="Pet Diets">
+                    <div class="product-text">
+                        <h3>Specialised Prescription Diets</h3>
+                        <button><a href="store">Shop Now</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section>
+  <div class="footer-container3">
+      <div class="footer-item3">
+          <img src="//supertails.com/cdn/shop/files/Group_2773.png?v=1695618845" alt="24hr Delivery">
+          <b><p>24hr Delivery</p></b>
+          <p>In 104 cities</p>
+      </div>
+      <div class="footer-item3">
+          <img src="//supertails.com/cdn/shop/files/Group_4229_3d723e4e-27fa-4ce4-b6c2-56682ff10eaa.png?v=1695980153" alt="Complimentary Vet Consult">
+          <b><p>Complimentary vet consult</p></b>
+          <p>For every new member</p>
+      </div>
+      <div class="footer-item3">
+          <img src="//supertails.com/cdn/shop/files/Group_20941.png?v=1695619093" alt="Pet Pharmacy">
+          <b><p>Pet Pharmacy</p></b>
+          <p>Exclusive</p>
+      </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-container">
+      <div class="footer-column">
+          <h4>ONLINE SHOPPING</h4>
+          <ul>
+              <li><a href="store">Dogs</a></li>
+              <li><a href="store">Cats</a></li>
+              <li><a href="store">Small Pets</a></li>
+              <li><a href="#">Consult a Vet</a></li>
+              <li><a href="#">Dog Behaviour</a></li>
+              <li><a href="store">Pet Pharmacy</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h4>EXPLORE</h4>
+          <ul>
+              <li><a href="#">Our story</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact Us</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h4>QUICK LINKS</h4>
+          <ul>
+              <li><a href="/">My Account</a></li>
+              <li><a href="#">Track Your Order</a></li>
+              <li><a href="#">Refund policy</a></li>
+              <li><a href="#">Return policy</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Refer and save</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h4>EXPERIENCE PARADISE APP ON MOBILE</h4>
+          <div class="app-store-buttons">
+              <a href="#"><img src="//supertails.com/cdn/shop/files/Frame_3421_12f12999-3318-4c4a-9068-45cff809345f.png?v=1695720851" alt="Get it on Google Play"></a>
+              <a href="#"><img src="//supertails.com/cdn/shop/files/Frame_3422_e205fb91-99db-4b85-9e13-c81a036d1520.png?v=1695720885" alt="Download on the App Store"></a>
+          </div>
+          <h4>FOLLOW US</h4>
+          
+          <div class="social-media">
+            <a href="https://www.instagram.com/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/128/2111/2111463.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.linkedin.com/in/bhaskar-mourya/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/128/3536/3536505.png" alt="LinkedIn" class="social-icon">
+            </a>
+            <a href="https://web.whatsapp.com/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/128/733/733585.png" alt="WhatsApp" class="social-icon">
+            </a>
+            
+            <a href="https://github.com/bhaskar2508" target="_blank">
+              <img src="https://cdn-icons-png.flaticon.com/128/270/270798.png" alt="Github" class="social-icon">
+          </a>
+        </div>
+          <h4>GET IN TOUCH</h4>
+          <p>1800-5723-575</p>
+          <p>support@petparadise.com</p>
+      </div>
+  </div>
+</footer>
+
+<div class="footer-links">
+  <h1>Popular Searches</h1>
+  <a href="#">Dog Food</a> |
+  <a href="#">Dog Collars Leashes Harnesses</a> |
+  <a href="#">Me-O</a> |
+  <a href="#">Cat Clothes</a> |
+  <a href="#">Cat Litter</a> |
+  <a href="#">Dog Raincoat</a> |
+  <a href="#">Dog Toys</a> |
+  <a href="#">Dog Beds</a> |
+  <a href="#">Veg Dog Foods</a> |
+  <a href="#">Dog Biscuit Cookies</a> |
+  <a href="#">Cat Dry Food</a> |
+  <a href="#">Cat Food</a> |
+  <a href="#">Pet Pharmacy</a> |
+  <a href="#">Pedigree</a> |
+  <a href="#">Cat Toys</a> |
+  <a href="#">Drools</a> |
+  <a href="#">Royal Chain</a> |
+  <a href="#">Dog Grooming</a> |
+  <a href="#">Dog Carrier</a> |
+  <a href="#">Dog Bones Chew</a> |
+  <a href="#">Pedigree Pro</a> |
+  <a href="#">Shebha</a> |
+  <a href="#"> Whiskas</a> |
+  <a href="#"> Cat Colar Leashes Harness</a> |
+  <a href="#"> Cat Wet Food</a> |
+  <a href="#"> Dogs Shampoos & Conditioner</a> |
+  <a href="#"> Cat Carrier Travel Supplies</a> |
+  <a href="#"> Dog Accessories</a> |
+  <a href="#"> Dog Bowl Feeders</a> |
+  <a href="#"> Dog Clothes</a> |
+  <a href="#"> Dog Treats</a> |
+  <a href="#"> Cat Accessories</a> |
+  <a href="#"> Cat Litter Boxes</a> |
+  <a href="#"> Cat Treats </a> |
+  <a href="#"> Farmina</a> |
+  <a href="#"> Dog Leashes</a> |
+  <a href="#"> Cat Kitten Food</a> |
+  <a href="#"> Cat Bed Mats Tents</a> |
+  <a href="#"> Deworning Tablets</a> |
+  <a href="#"> Cat Shampoo & Conditioner</a> |
+  <a href="#"> Dog Fleas & Tricks</a> |
+  <a href="#"> Dog Foots</a> |
+  <a href="#"> Orijen Dog Food</a> |
+  <a href="#"> Acana Dog Food</a> |
+  <a href="#"> Dog Training & Behaviour</a> |
+  <a href="#"> Dog Food Supplements &  Vitamins</a> |
+</div>
+
+<div id="address">
+  <H1><b>Pet Paradise Office</b></H1>
+  <h2>Saryodaya Nagar, Mulund West , Mumbai -80 , Maharashtra.</h2>
+</div>
+
+<div class="conclusion">
+  <p>&copy; <span id="year"></span> Pet Paradise. All rights reserved.</p>
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"
+  integrity="sha512-qF6akR/fsZAB4Co1QDDnUXWnaQseLGXoniuSuSlPQK6+aWhlMZcHzkasCSlnWoe+TJuudlka1/IQ01Dnhgq95g=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="{%static 'js/script.js' %}"></script>
+</body>
+</html>

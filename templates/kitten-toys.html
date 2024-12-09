@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%load static%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Food</title>
+    <link
+      rel="shortcut icon"
+      href="{%static 'images/logo.png'%}" type="image/x-icon"/>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{%static 'css/kitten-toys.css'%}">
+<body>
+    
+<header>
+    <div class="menu">
+        <div class="menu-item">
+            <button>Cats</button>
+            <div class="dropdown-content">
+                <a href="cat-food">Food</a>
+                <a href="cat-toys">Toys</a>
+                <a href="cat-health">Health</a>
+            </div>
+        </div>
+        <div class="menu-item">
+            <button>Dogs</button>
+            <div class="dropdown-content">
+                <a href="dog-food">Food</a>
+                <a href="dog-toys">Toys</a>
+                <a href="dog-health">Health</a>
+            </div>
+        </div>
+        <div class="menu-item">
+            <button>Puppy</button>
+            <div class="dropdown-content">
+                <a href="puppy-care">Care</a>
+                <a href="puppy-food">Food</a>
+            </div>
+        </div>
+        <div class="menu-item">
+            <button>Kitten</button>
+            <div class="dropdown-content">
+                <a href="kitten-care">Care</a>
+                <a href="kitten-toys">Toys</a>
+            </div>
+        </div>
+        <div class="menu-item">
+            <button>Vet</button>
+            <div class="dropdown-content">
+                <a href="#vet-appointments">Appointments</a>
+                <a href="#vet-tips">Tips</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="right-menu">
+        <a href="/">Home</a>
+        <div class="cart-icon">
+            <i class="ri-shopping-cart-line"></i>
+            <a href="cart"><span id="cart-count">0</span></a>
+        </div>
+        <div class="user-icon">
+            <i class="fas fa-user"></i>
+            <a href="#user-profile">{{user}}</a>
+        </div>
+    </div>
+</header>   
+
+</body>
+<html>
